@@ -168,8 +168,11 @@ public class PetascopeController extends AbstractController {
                 // e.g: 2.0.1, 2.1.0 (WCS)
                 String[] versions = getValuesByKeyAllowNull(kvpParameters, KVPSymbols.KEY_VERSION);
                 // e.g: GetCapabilities, DescribeCoverage
-                String requestService = getValueByKey(kvpParameters, KVPSymbols.KEY_REQUEST);
-                request = requestService;
+                String[] requestParameters = kvpParameters.get(KVPSymbols.KEY_REQUEST);
+                if (requestParameters == null) {
+                    throw new PetascopeException(ExceptionCode.MissingParameterValue, "The 'REQUEST' parameter is absent.");
+                }
+                request = requestParameters[0];
                 
                 // If user has petascope admin credentials (e.g: logged in from WSClient) from external place,
                 // then no need to check if his IP is allowed anymore.
@@ -179,7 +182,7 @@ public class PetascopeController extends AbstractController {
 
                 // Check if any handlers can handle the request
                 for (AbstractHandler handler : handlers) {
-                    if (handler.canHandle(service, versions, requestService)) {                    
+                    if (handler.canHandle(service, versions, request)) {
                         response = handler.handle(kvpParameters);
                         service = handler.getService();
                         break;
