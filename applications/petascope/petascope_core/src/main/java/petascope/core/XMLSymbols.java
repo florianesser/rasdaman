@@ -179,7 +179,7 @@ public interface XMLSymbols {
     String LABEL_WMS_CONTACT_ORGANIZATION = "ContactOrganization";
     String LABEL_WMS_CONTACT_POSITION = "ContactPosition";
     String LABEL_WMS_CONTACT_ADDRESS = "ContactAddress";
-    String LABEL_WMS_ADDRESS_TYPE = "AddessType";
+    String LABEL_WMS_ADDRESS_TYPE = "AddressType";
     String VALUE_WMS_ADDRES_TYPE = "postal";
     String LABEL_WMS_ADDRESS = "Address";
     String LABEL_WMS_CITY = "City";
