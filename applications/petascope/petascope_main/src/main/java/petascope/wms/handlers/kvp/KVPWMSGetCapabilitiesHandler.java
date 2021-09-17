@@ -187,6 +187,7 @@ public class KVPWMSGetCapabilitiesHandler extends KVPWMSAbstractHandler {
         if (serviceIdentification.getAccessConstraints().size() > 0) {
             Element accessContraintsElement = new Element(XMLSymbols.LABEL_WMS_ACCESS_CONSTRAINTS);
             accessContraintsElement.appendChild(serviceIdentification.getAccessConstraints().get(0));
+            serviceElement.appendChild(accessContraintsElement);
         }
 
         return serviceElement;
