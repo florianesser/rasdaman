@@ -297,6 +297,7 @@ public interface XMLSymbols {
     String LABEL_TITLE = "Title";
     String LABEL_ABSTRACT = "Abstract";
     String LABEL_KEYWORDS = "Keywords";
+    String LABEL_KEYWORDLIST = "KeywordList";
     String LABEL_KEYWORD = "Keyword";
     String LABEL_TYPE = "Type";
     String LABEL_SERVICE_TYPE = "ServiceType";
