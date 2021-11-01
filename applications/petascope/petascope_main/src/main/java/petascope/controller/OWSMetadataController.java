@@ -21,6 +21,8 @@
  */
 package petascope.controller;
 
+import static petascope.core.KVPSymbols.*;
+
 import org.rasdaman.AuthenticationService;
 import java.io.IOException;
 import java.util.List;
@@ -40,22 +42,6 @@ import petascope.exceptions.WMSException;
 import petascope.util.ListUtil;
 import org.springframework.web.bind.annotation.RestController;
 import petascope.core.KVPSymbols;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_ABSTRACT;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_ADMINISTRATIVE_AREA;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_CITY;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_CONTACT_INSTRUCTIONS;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_COUNTRY;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_EMAIL;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_FACSIMILE_PHONE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_HOURS_OF_SERVICE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_INDIVIDUAL_NAME;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_POSITION_NAME;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_POSTAL_CODE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_PROVIDER_NAME;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_PROVIDER_SITE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_ROLE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_SERVICE_TITLE;
-import static petascope.core.KVPSymbols.KEY_OWS_METADATA_VOICE_PHONE;
 
 /**
  * Controller to handle request to Admin page to update OWS Service metadata
@@ -173,11 +159,16 @@ public class OWSMetadataController extends AbstractController {
             owsServiceMetadata.getServiceProvider().getServiceContact().getContactInfo().getAddress().setPostalCode(postalCodeValue);
         }
         
+        String streetValue = getValueByKeyAllowNull(kvpParameters, KEY_OWS_METADATA_STREET);
+        if (streetValue != null) {
+            owsServiceMetadata.getServiceProvider().getServiceContact().getContactInfo().getAddress().setDeliveryPoints(ListUtil.valuesToList(streetValue));
+        }
+
         String countryValue = getValueByKeyAllowNull(kvpParameters, KEY_OWS_METADATA_COUNTRY);
         if (countryValue != null) {
             owsServiceMetadata.getServiceProvider().getServiceContact().getContactInfo().getAddress().setCountry(countryValue);   
         }
-        
+
         // Update the new submitted values to ows service metadata object
         owsMetadataRepostioryService.save(owsServiceMetadata);            
         log.info("OWS Service metadata is updated in database from input Service Provider.");

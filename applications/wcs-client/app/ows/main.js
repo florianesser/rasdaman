@@ -6770,11 +6770,12 @@ var rasdaman;
                     var facsimilePhone = capabilities.serviceProvider.serviceContact.contactInfo.phone.facsimile[0];
                     var hoursOfService = capabilities.serviceProvider.serviceContact.contactInfo.hoursOfService;
                     var contactInstructions = capabilities.serviceProvider.serviceContact.contactInfo.contactInstructions;
+                    var street = capabilities.serviceProvider.serviceContact.contactInfo.address.street;
                     var city = capabilities.serviceProvider.serviceContact.contactInfo.address.city;
                     var administrativeArea = capabilities.serviceProvider.serviceContact.contactInfo.address.administrativeArea;
                     var postalCode = capabilities.serviceProvider.serviceContact.contactInfo.address.postalCode;
                     var country = capabilities.serviceProvider.serviceContact.contactInfo.address.country;
-                    $scope.serviceProvider = new admin.ServiceProvider(providerName, providerSite, individualName, positionName, role, email, voicePhone, facsimilePhone, hoursOfService, contactInstructions, city, administrativeArea, postalCode, country);
+                    $scope.serviceProvider = new admin.ServiceProvider(providerName, providerSite, individualName, positionName, role, email, voicePhone, facsimilePhone, hoursOfService, contactInstructions, street, city, administrativeArea, postalCode, country);
                 }, function () {
                     var args = [];
                     for (var _i = 0; _i < arguments.length; _i++) {
@@ -7013,7 +7014,7 @@ var admin;
 var admin;
 (function (admin) {
     var ServiceProvider = (function () {
-        function ServiceProvider(providerName, providerSite, individualName, positionName, role, email, voicePhone, facsimilePhone, hoursOfService, contactInstructions, city, administrativeArea, postalCode, country) {
+        function ServiceProvider(providerName, providerSite, individualName, positionName, role, email, voicePhone, facsimilePhone, hoursOfService, contactInstructions, street, city, administrativeArea, postalCode, country) {
             this.providerName = providerName;
             this.providerSite = providerSite;
             this.individualName = individualName;
@@ -7024,6 +7025,7 @@ var admin;
             this.facsimilePhone = facsimilePhone;
             this.hoursOfService = hoursOfService;
             this.contactInstructions = contactInstructions;
+            this.street = street;
             this.city = city;
             this.administrativeArea = administrativeArea;
             this.postalCode = postalCode;
@@ -7040,6 +7042,7 @@ var admin;
                 "&facsimilePhone=" + this.facsimilePhone +
                 "&hoursOfService=" + this.hoursOfService +
                 "&contactInstructions=" + this.contactInstructions +
+                "&street=" + this.street +
                 "&city=" + this.city +
                 "&administrativeArea=" + this.administrativeArea +
                 "&postalCode=" + this.postalCode +

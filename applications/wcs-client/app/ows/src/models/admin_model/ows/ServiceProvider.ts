@@ -33,13 +33,14 @@ module admin {
         private facsimilePhone:string;
         private hoursOfService:string;
         private contactInstructions:string;
+        private street:string;
         private city:string;
         private administrativeArea:string;
         private postalCode:string;
         private country:string;
 
         public constructor(providerName, providerSite, individualName, positionName, role, email, voicePhone, facsimilePhone,
-                        hoursOfService, contactInstructions, city, administrativeArea, postalCode, country) {            
+                        hoursOfService, contactInstructions, street, city, administrativeArea, postalCode, country) {            
             this.providerName = providerName;
             this.providerSite = providerSite;
             this.individualName = individualName;
@@ -50,6 +51,7 @@ module admin {
             this.facsimilePhone = facsimilePhone;
             this.hoursOfService = hoursOfService;
             this.contactInstructions = contactInstructions;
+            this.street = street;
             this.city = city;
             this.administrativeArea = administrativeArea;
             this.postalCode = postalCode;
@@ -67,6 +69,7 @@ module admin {
                 "&facsimilePhone=" + this.facsimilePhone +
                 "&hoursOfService=" + this.hoursOfService +
                 "&contactInstructions=" + this.contactInstructions +
+                "&street=" + this.street +
                 "&city=" + this.city + 
                 "&administrativeArea=" + this.administrativeArea +
                 "&postalCode=" + this.postalCode +

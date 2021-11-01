@@ -195,6 +195,7 @@ public interface KVPSymbols {
     String KEY_OWS_METADATA_CONTACT_INSTRUCTIONS = "contactInstructions";
     String KEY_OWS_METADATA_CITY = "city";
     String KEY_OWS_METADATA_ADMINISTRATIVE_AREA = "administrativeArea";
+    String KEY_OWS_METADATA_STREET = "street";
     String KEY_OWS_METADATA_POSTAL_CODE = "postalCode";
     String KEY_OWS_METADATA_COUNTRY = "country";
     
