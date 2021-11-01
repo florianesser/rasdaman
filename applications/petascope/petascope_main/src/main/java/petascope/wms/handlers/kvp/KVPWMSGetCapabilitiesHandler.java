@@ -243,7 +243,7 @@ public class KVPWMSGetCapabilitiesHandler extends KVPWMSAbstractHandler {
 
         // StateOrProvince
         Element stateOrProvinceElement = new Element(XMLSymbols.LABEL_WMS_STATE_OR_PROVINCE);
-        stateOrProvinceElement.appendChild(address.getCity());
+        stateOrProvinceElement.appendChild(address.getAdministrativeArea());
         contactAddressElement.appendChild(stateOrProvinceElement);
 
         // PostCode
