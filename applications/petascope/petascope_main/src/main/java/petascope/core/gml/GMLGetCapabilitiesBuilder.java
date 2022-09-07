@@ -852,12 +852,13 @@ public class GMLGetCapabilitiesBuilder {
             extendedCapabilitiesElement.appendChild(metadataURLElement);
 
             String ENG_LANGUAGE = "eng";
+            String GER_LANGUAGE = "ger";
 
             // <inspire_common:SupportedLanguages>
             Element supportedLanguagesElement = new Element(XMLUtil.createXMLLabel(PREFIX_INSPIRE_COMMON, LABEL_INSPIRE_SUPPORTED_LANGUAGES), NAMESPACE_INSPIRE_COMMON);
             Element defaultLanguageElement = new Element(XMLUtil.createXMLLabel(PREFIX_INSPIRE_COMMON, LABEL_INSPIRE_DEFAULT_LANGUAGE), NAMESPACE_INSPIRE_COMMON);
             Element languageElement1 = new Element(XMLUtil.createXMLLabel(PREFIX_INSPIRE_COMMON, LABEL_INSPIRE_LANGUAGE), NAMESPACE_INSPIRE_COMMON);
-            languageElement1.appendChild(ENG_LANGUAGE);
+            languageElement1.appendChild(GER_LANGUAGE);
             defaultLanguageElement.appendChild(languageElement1);
             supportedLanguagesElement.appendChild(defaultLanguageElement);
 
@@ -866,7 +867,7 @@ public class GMLGetCapabilitiesBuilder {
             // <inspire_common:ResponseLanguage>
             Element responseLanguagesElement = new Element(XMLUtil.createXMLLabel(PREFIX_INSPIRE_COMMON, LABEL_INSPIRE_RESPONSE_LANGUAGE), NAMESPACE_INSPIRE_COMMON);
             Element languageElement2 = new Element(XMLUtil.createXMLLabel(PREFIX_INSPIRE_COMMON, LABEL_INSPIRE_LANGUAGE), NAMESPACE_INSPIRE_COMMON);
-            languageElement2.appendChild(ENG_LANGUAGE);
+            languageElement2.appendChild(GER_LANGUAGE);
             responseLanguagesElement.appendChild(languageElement2);
 
             extendedCapabilitiesElement.appendChild(responseLanguagesElement);
