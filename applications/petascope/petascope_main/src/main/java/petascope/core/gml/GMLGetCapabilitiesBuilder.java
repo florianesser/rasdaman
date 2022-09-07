@@ -340,6 +340,14 @@ public class GMLGetCapabilitiesBuilder {
             serviceIdentificationElement.appendChild(serviceTypeVersionElement);
         }
 
+        // List of profiles (i.e: the WCS supported extensions)
+        for (String extension : getProfiles()) {
+            Element profileElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_PROFILE), NAMESPACE_OWS);
+            profileElement.appendChild(extension);
+
+            serviceIdentificationElement.appendChild(profileElement);
+        }
+
         if (serviceIdentification.getFees() != null) {
             Element feesElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_FEES), NAMESPACE_OWS);
             feesElement.appendChild(serviceIdentification.getFees());
@@ -352,14 +360,6 @@ public class GMLGetCapabilitiesBuilder {
                 accessConstraintsElement.appendChild(accessContraint);
                 serviceIdentificationElement.appendChild(accessConstraintsElement);
             }
-        }
-
-        // List of profiles (i.e: the WCS supported extensions)
-        for (String extension : getProfiles()) {
-            Element profileElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_PROFILE), NAMESPACE_OWS);
-            profileElement.appendChild(extension);
-
-            serviceIdentificationElement.appendChild(profileElement);
         }
 
         return serviceIdentificationElement;
