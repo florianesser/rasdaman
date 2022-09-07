@@ -402,24 +402,6 @@ public class GMLGetCapabilitiesBuilder {
         serviceContactElement.appendChild(contactInfoElement);
 
         // 1.1.1.1 *children of ContactInfo element*        
-        if (contactInfo.getContactInstructions() != null) {
-            Element contactInstructionsElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_CONTACT_INSTRUCTIONS), NAMESPACE_OWS);
-            contactInstructionsElement.appendChild(contactInfo.getContactInstructions());
-            contactInfoElement.appendChild(contactInstructionsElement);
-        }
-
-        if (contactInfo.getHoursOfService() != null) {
-            Element hoursOfServiceElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_HOURS_OF_SERVICE), NAMESPACE_OWS);
-            hoursOfServiceElement.appendChild(contactInfo.getHoursOfService());
-            contactInfoElement.appendChild(hoursOfServiceElement);
-        }
-
-        if (contactInfo.getOnlineResource() != null) {
-            Element onlineResourceElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_ONLINE_RESOURCE), NAMESPACE_OWS);
-            onlineResourceElement.appendChild(contactInfo.getOnlineResource());
-            contactInfoElement.appendChild(onlineResourceElement);
-        }
-
         Phone phone = contactInfo.getPhone();
         Element phoneElement = this.buildPhoneElement(phone);
         if (phoneElement.getChildCount() > 0) {
@@ -430,6 +412,24 @@ public class GMLGetCapabilitiesBuilder {
         Element addressElement = this.buildAddressElement(address);
         if (addressElement.getChildCount() > 0) {
             contactInfoElement.appendChild(addressElement);
+        }
+
+        if (contactInfo.getOnlineResource() != null) {
+            Element onlineResourceElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_ONLINE_RESOURCE), NAMESPACE_OWS);
+            onlineResourceElement.appendChild(contactInfo.getOnlineResource());
+            contactInfoElement.appendChild(onlineResourceElement);
+        }
+
+        if (contactInfo.getHoursOfService() != null) {
+            Element hoursOfServiceElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_HOURS_OF_SERVICE), NAMESPACE_OWS);
+            hoursOfServiceElement.appendChild(contactInfo.getHoursOfService());
+            contactInfoElement.appendChild(hoursOfServiceElement);
+        }
+
+        if (contactInfo.getContactInstructions() != null) {
+            Element contactInstructionsElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_CONTACT_INSTRUCTIONS), NAMESPACE_OWS);
+            contactInstructionsElement.appendChild(contactInfo.getContactInstructions());
+            contactInfoElement.appendChild(contactInstructionsElement);
         }
 
         // 1.1.1 *children of ServiceContact element*
