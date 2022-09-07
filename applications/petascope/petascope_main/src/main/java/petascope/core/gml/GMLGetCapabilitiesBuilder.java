@@ -416,7 +416,8 @@ public class GMLGetCapabilitiesBuilder {
 
         if (contactInfo.getOnlineResource() != null) {
             Element onlineResourceElement = new Element(XMLUtil.createXMLLabel(PREFIX_OWS, LABEL_ONLINE_RESOURCE), NAMESPACE_OWS);
-            onlineResourceElement.appendChild(contactInfo.getOnlineResource());
+            Attribute onlineResourceHrefAttribute = new Attribute(XMLUtil.createXMLLabel(PREFIX_XLINK, ATT_HREF), NAMESPACE_XLINK, contactInfo.getOnlineResource());
+            onlineResourceElement.addAttribute(onlineResourceHrefAttribute);
             contactInfoElement.appendChild(onlineResourceElement);
         }
 
