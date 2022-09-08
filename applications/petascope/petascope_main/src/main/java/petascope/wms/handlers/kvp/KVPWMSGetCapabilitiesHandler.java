@@ -669,7 +669,7 @@ public class KVPWMSGetCapabilitiesHandler extends KVPWMSAbstractHandler {
      * @return KeywordList element
      */
     public Element buildKeywordListElement(List<String> keywords) {
-        Element keywordsElement = new Element(XMLSymbols.LABEL_KEYWORDLIST);
+        Element keywordsElement = new Element(XMLSymbols.LABEL_KEYWORDLIST, NAMESPACE_WMS);
         // KeywordList element can contain multiple Keyword elements
         for (String keyword : keywords) {
             Element keywordElement = new Element(XMLSymbols.LABEL_KEYWORD);
