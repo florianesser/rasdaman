@@ -604,7 +604,7 @@ public interface XMLSymbols {
     String SCHEMA_LOCATION_GMLRGRID = "http://schemas.opengis.net/gml/3.3/referencableGrid.xsd";
     
     String SCHEMA_LOCATION_WCS_20_GET_CAPABILITIES = "http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsGetCapabilities.xsd";
-    String SCHEMA_LOCATION_WCS_21_GET_CAPABILITIES = "http://www.opengis.net/wcs/2.1 http://schemas.opengis.net/wcs/2.1/wcsGetCapabilities.xsd";
+    String SCHEMA_LOCATION_WCS_21_GET_CAPABILITIES = "http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsGetCapabilities.xsd";
     
     String SCHEMA_LOCATION_WCS_CIS_10_COVERAGE_DESCRIBE_COVERAGE = "http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd";
     String SCHEMA_LOCATION_WCS_CIS_10_REFERENCEABLE_COVERAGE_DESCRIBE_COVERAGE = "http://www.opengis.net/gml/3.3/rgrid http://schemas.opengis.net/gml/3.3/referenceableGrid.xsd";

@@ -1021,7 +1021,7 @@ public class GMLGetCapabilitiesBuilder {
         if (version.equals(VersionManager.WCS_VERSION_20)) {
             return NAMESPACE_WCS_20;
         } else {
-            return NAMESPACE_WCS_21;
+            return NAMESPACE_WCS_20; // The WCS 2.1 XSD does not contain capabilities elements, reuse 2.0 version
         }
     }
        
