@@ -354,14 +354,14 @@ public class KVPWMSGetCapabilitiesHandler extends KVPWMSAbstractHandler {
         
         Element onlineResourceElement1 = new Element(XMLSymbols.LABEL_WMS_ONLINE_RESOURCE, NAMESPACE_WMS);        
         Attribute xlinkHrefAttribute1 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_HREF, ConfigManager.PETASCOPE_ENDPOINT_URL);
-        Attribute xlinkTypeAttribute1 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, ConfigManager.PETASCOPE_ENDPOINT_URL);
+        Attribute xlinkTypeAttribute1 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, "simple");
         onlineResourceElement1.addAttribute(xlinkHrefAttribute1);
         onlineResourceElement1.addAttribute(xlinkTypeAttribute1);
         getElement1.appendChild(onlineResourceElement1);
         
         Element onlineResourceElement2 = new Element(XMLSymbols.LABEL_WMS_ONLINE_RESOURCE, NAMESPACE_WMS);        
         Attribute xlinkHrefAttribute2 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_HREF, ConfigManager.PETASCOPE_ENDPOINT_URL);
-        Attribute xlinkTypeAttribute2 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, ConfigManager.PETASCOPE_ENDPOINT_URL);
+        Attribute xlinkTypeAttribute2 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, "simple");
         onlineResourceElement2.addAttribute(xlinkHrefAttribute2);
         onlineResourceElement2.addAttribute(xlinkTypeAttribute2);
         postElement1.appendChild(onlineResourceElement2);
@@ -393,14 +393,14 @@ public class KVPWMSGetCapabilitiesHandler extends KVPWMSAbstractHandler {
         
         Element onlineResourceElement3 = new Element(XMLSymbols.LABEL_WMS_ONLINE_RESOURCE, NAMESPACE_WMS);        
         Attribute xlinkHrefAttribute3 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_HREF, ConfigManager.PETASCOPE_ENDPOINT_URL);
-        Attribute xlinkTypeAttribute3 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, ConfigManager.PETASCOPE_ENDPOINT_URL);
+        Attribute xlinkTypeAttribute3 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, "simple");
         onlineResourceElement3.addAttribute(xlinkTypeAttribute3);
         onlineResourceElement3.addAttribute(xlinkHrefAttribute3);
         getElement2.appendChild(onlineResourceElement3);
         
         Element onlineResourceElement4 = new Element(XMLSymbols.LABEL_WMS_ONLINE_RESOURCE, NAMESPACE_WMS);        
         Attribute xlinkHrefAttribute4 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_HREF, ConfigManager.PETASCOPE_ENDPOINT_URL);
-        Attribute xlinkTypeAttribute4 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, ConfigManager.PETASCOPE_ENDPOINT_URL);
+        Attribute xlinkTypeAttribute4 = XMLUtil.createXMLAttribute(NAMESPACE_XLINK, PREFIX_XLINK, ATT_TYPE, "simple");
         onlineResourceElement4.addAttribute(xlinkHrefAttribute4);
         onlineResourceElement4.addAttribute(xlinkTypeAttribute4);
         postElement2.appendChild(onlineResourceElement4);
