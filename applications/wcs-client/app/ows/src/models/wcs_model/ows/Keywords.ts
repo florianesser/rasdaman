@@ -39,7 +39,7 @@ module ows {
                 this.keyword.push(new LanguageString(s));
             });
 
-            this.type = new Code(source.getChildAsSerializedObject("ows:Type"));
+            //this.type = new Code(source.getChildAsSerializedObject("ows:Type"));
         }
     }
 }

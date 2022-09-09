@@ -672,7 +672,7 @@ var ows;
             source.getChildrenAsSerializedObjects("ows:Keyword").forEach(function (s) {
                 _this.keyword.push(new ows.LanguageString(s));
             });
-            this.type = new ows.Code(source.getChildAsSerializedObject("ows:Type"));
+            //this.type = new ows.Code(source.getChildAsSerializedObject("ows:Type"));
         }
         return Keywords;
     }());
